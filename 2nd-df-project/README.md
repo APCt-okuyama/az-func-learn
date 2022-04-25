@@ -1,6 +1,6 @@
 # 2nd durable functions
 
-Funcコマンドを使って作成
+Funcコマンドを使って関数を作成する
 
 ```
 >func -v 
@@ -18,7 +18,7 @@ durable-functionsをインストール
 >npm install durable-functions
 ```
 
-関数のtemplateを確認
+Durable Functions の template を確認
 ```
 >func templates list
 :
