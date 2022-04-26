@@ -30,5 +30,5 @@
 ```
 
 ```
->curl http://localhost:7071/api/orchestrators/MyOrchestrator
+>curl -X POST -d "C:\work" http://localhost:7071/api/orchestrators/MyOrchestrator
 ```
