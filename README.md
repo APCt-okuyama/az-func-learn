@@ -30,11 +30,12 @@ Durable Functions Entity HTTP starter
 | :--: | --- | --- |
 | #1 | 関数チェーン | ワークフローの実現 |
 | #2 | ファンアウト/ファンイン | 並列処理の実現 |
-| #3 | 非同期 HTTP API | 実行時間の長い処理の調整 |
+| #3 | 非同期 HTTP API | 実行時間の長い処理の調整 <br>※オーケストレーター関数の状態をクエリするWebhook HTTP APIが組み込みサポートされている |
 | #4 | モニター | 柔軟な監視処理 |
 | #5 | 人による操作 | タイマーを利用したワークフロー |
 | #6 | アグリゲーター (※entityを利用) | データの集計 |
-[公式の説明はこちら](https://docs.microsoft.com/ja-jp/azure/azure-functions/durable/durable-functions-overview)
+
+[詳細な説明はこちらを参照](https://docs.microsoft.com/ja-jp/azure/azure-functions/durable/durable-functions-overview)
 
 ## 開発に必要なもの
 ```
