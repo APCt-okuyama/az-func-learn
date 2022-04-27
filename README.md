@@ -12,7 +12,7 @@ https://docs.microsoft.com/ja-jp/azure/azure-functions/durable/quickstart-js-vsc
 | 関数 | 機能 |
 | --- | ---|
 |orchestrator関数|ステートフルなワークフローの定義が簡単に行える|
-|entity関数|ステートフルなエンティティの定義が簡単に行える|
+|entity関数|ステートフルなエンティティの定義が簡単に行える<br>※状態・情報の保存先として利用できる|
 
 ### 関数の種類
 ```
