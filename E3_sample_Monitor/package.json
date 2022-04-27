@@ -1,0 +1,15 @@
+{
+  "name": "",
+  "version": "",
+  "description": "",
+  "scripts": {
+    "test": "echo \"No tests yet...\""
+  },
+  "author": "",
+  "dependencies": {
+    "durable-functions": "^1.5.4",
+    "luxon": "^2.3.0",
+    "request": "^2.88.2",
+    "request-promise-native": "^1.0.9"
+  }
+}

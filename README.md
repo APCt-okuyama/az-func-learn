@@ -12,7 +12,7 @@ https://docs.microsoft.com/ja-jp/azure/azure-functions/durable/quickstart-js-vsc
 | 関数 | 機能 |
 | --- | ---|
 |orchestrator関数|ステートフルなワークフローの定義が簡単に行える|
-|entity関数|ステートフルなエンティティの定義が簡単に行える|
+|entity関数|ステートフルなエンティティの定義が簡単に行える<br>※状態・情報の保存先として利用できる|
 
 ### 関数の種類
 ```
@@ -53,7 +53,7 @@ Azure Functions Core Tools (funcコマンド)
 | 2nd-df-project | Core Tools(funcコマンド)を使って作成 |
 | 3rd-df-project | Entityのサンプル (単純なcounter) |
 | E2_sample | ファインイン・ファンアウトのサンプル |
-
+| E3_sample_Monitor | 監視のサンプル <br> twilio を利用 <br> OpenWeather API を利用 |
 
 
 
