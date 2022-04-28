@@ -12,7 +12,7 @@
 module.exports = async function (context, phoneNumber) {
     context.log("start SendGoodWeatherAlert..." + phoneNumber);
     context.bindings.message = {
-        body: `The weather's clear outside! Go take a walk!`,
+        body: `This is my test message.`,
         to: phoneNumber
     };
 };

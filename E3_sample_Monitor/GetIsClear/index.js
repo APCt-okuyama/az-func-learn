@@ -25,7 +25,8 @@ module.exports = async function (context, location) {
 
 async function getCurrentConditionsByOpenWeather(location) {
     console.log('getCurrentConditionsByOpenWeather start...');
-    const myUrl = "https://api.openweathermap.org/data/2.5/weather?lat=35&lon=139&appid=37fe5e83f7d4a7fb7bf7db741f6afc01";
+    //local.setting.jsonにAPIKeyを設定
+    const myUrl = `https://api.openweathermap.org/data/2.5/weather?lat=35&lon=139&appid=${process.env["OpenWeatherMapApiKey"]}`;
     const options = {
         url: myUrl,
         method: 'GET',
