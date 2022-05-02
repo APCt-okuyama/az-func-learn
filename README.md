@@ -11,7 +11,7 @@ https://docs.microsoft.com/ja-jp/azure/azure-functions/durable/quickstart-js-vsc
 
 | 関数 | 機能 |
 | --- | ---|
-|orchestrator関数|ステートフルなワークフローの定義が簡単に行える|
+|orchestrator関数|ステートフルなワークフローの定義が簡単に行える<br>※コードは決定論的でなければいけない|
 |entity関数|ステートフルなエンティティの定義が簡単に行える<br>※状態・情報の保存先として利用できる|
 
 ### 関数の種類
@@ -33,7 +33,7 @@ Durable Functions Entity HTTP starter
 | #3 | 非同期 HTTP API | 実行時間の長い処理の調整 <br>※オーケストレーター関数の状態をクエリするWebhook HTTP APIが組み込みサポートされている |
 | #4 | モニター | 柔軟な監視処理 |
 | #5 | 人による操作 | タイマーを利用したワークフロー |
-| #6 | アグリゲーター (※entityを利用) | データの集計 |
+| #6 | アグリゲーター | データの集計<br>(※entityを利用) |
 
 [詳細な説明はこちらを参照](https://docs.microsoft.com/ja-jp/azure/azure-functions/durable/durable-functions-overview)
 
@@ -54,6 +54,7 @@ Azure Functions Core Tools (funcコマンド)
 | 3rd-df-project | Entityのサンプル (単純なcounter) |
 | E2_sample | ファインイン・ファンアウトのサンプル |
 | E3_sample_Monitor | 監視のサンプル <br> twilio を利用 <br> OpenWeather API を利用 |
+| E4_sample_sms_verification | 人による操作のサンプル<br> Twilio を利用した本人確認|
 
 
 
