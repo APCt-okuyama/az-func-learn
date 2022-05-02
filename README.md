@@ -39,11 +39,26 @@ Durable Functions Entity HTTP starter
 
 ## 開発に必要なもの
 ```
+Azure Account
 Visual Studio Code
 Azure Functions VS Code 拡張
 Azure ストレージアカウント (Azure サブスクリプション)
 Node.js 10.x または 12.x ※v14で試しています。
 Azure Functions Core Tools (funcコマンド)
+```
+### Azureリソースの準備 
+リソースグループとストレージアカウントを作成しておく
+```
+>az login
+>az group create --name az-func-example-rg --location japaneast
+>az storage account create --name durablefunc0001 --resource-group az-func-example-rg --location japaneast --sku Standard_RAGRS --kind StorageV2
+>az functionapp create --resource-group az-func-example-rg --consumption-plan-location japaneast --runtime node --runtime-version 14 --functions-version 4 --name durable-sample-func --storage-account durablefunc0001
+```
+作成したストレージアカウントに自動的にdurabel functions 管理用のキュー、テーブルが作成されます。
+
+(注意) 不要になったら削除する
+```
+>az group delete --name az-func-example-rg
 ```
 
 ## サンプルソースコード

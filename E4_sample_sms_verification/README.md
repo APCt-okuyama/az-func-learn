@@ -39,3 +39,24 @@ funcコマンドでプロジェクトとそれぞれの関数を作成する
 ```
 curl "http://localhost:7071/runtime/webhooks/durabletask/instances/e1cc6477cce140f79ceaa50af050c835?taskHub=TestHubName&connection=Storage&code=0MgYE34uNIRtd4y6lWJv4BikbesGRPpYHGoQWyWsHzPO9WSSa/6NnQ=="
 ```
+
+## Azureへのデプロイの例
+
+Functionsを作成
+```
+>az functionapp create --resource-group az-func-example-rg --consumption-plan-location japaneast --runtime node --runtime-version 14 --functions-version 4 --name durable-sample-func --storage-account durablefunc000
+```
+
+アプリをデプロイ
+```
+>func azure functionapp publish durable-sample-func
+```
+
+アプリ設定が必要です(Azure Portalから)
+```
+    "MyTaskHubName" : "E4TaskHub",
+    "AzureWebJobsStorage": "DefaultEndpointsProtocol=xxx....   ",
+    "TwilioAccountSid": "XXX...",
+    "TwilioAuthToken": "YYY...",
+    "TwilioPhoneNumber": "+1123456789"    
+```
