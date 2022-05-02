@@ -54,6 +54,10 @@ Azure Functions Core Tools (funcコマンド)
 >az storage account create --name durablefunc0001 --resource-group az-func-example-rg --location japaneast --sku Standard_RAGRS --kind StorageV2
 >az functionapp create --resource-group az-func-example-rg --consumption-plan-location japaneast --runtime node --runtime-version 14 --functions-version 4 --name durable-sample-func --storage-account durablefunc0001
 ```
+開発中は不用意にスケーリングされないようにScaleLimitを設定しておきます。
+```
+>az resource update --resource-type Microsoft.Web/sites -g az-func-example-rg -n durable-sample-func/config/web --set properties.functionAppScaleLimit=1
+```
 作成したストレージアカウントに自動的にdurabel functions 管理用のキュー、テーブルが作成されます。
 
 (注意) 不要になったら削除する
@@ -69,7 +73,6 @@ Azure Functions Core Tools (funcコマンド)
 | 3rd-df-project | Entityのサンプル (単純なcounter) |
 | E2_sample | ファインイン・ファンアウトのサンプル |
 | E3_sample_Monitor | 監視のサンプル <br> twilio を利用 <br> OpenWeather API を利用 |
-| E4_sample_sms_verification | 人による操作のサンプル<br> Twilio を利用した本人確認|
-
-
-
+| E4_sample_sms_verification | 人による操作のサンプル<br> Twilio を利用したSMSでの本人確認|
+| Practice01_AzureStrage | タスクハブ(Azure Strage)について |
+| Practice02_WorkflowError | 実践的なサンプルとして<br>ワークフローでエラーが発生した場合のサンプル |

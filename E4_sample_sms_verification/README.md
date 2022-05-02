@@ -42,15 +42,24 @@ curl "http://localhost:7071/runtime/webhooks/durabletask/instances/e1cc6477cce14
 
 ## Azureへのデプロイの例
 
-Functionsを作成
+FunctionsAppを作成
 ```
->az functionapp create --resource-group az-func-example-rg --consumption-plan-location japaneast --runtime node --runtime-version 14 --functions-version 4 --name durable-sample-func --storage-account durablefunc000
+>az functionapp create --resource-group az-func-example-rg --consumption-plan-location japaneast --runtime node --runtime-version 14 --functions-version 4 --name durable-sample-func --storage-account durablefunc0001
 ```
+
+開発中は不用意にスケーリングされないようにScaleLimitを設定しておきます。
+```
+>az resource update --resource-type Microsoft.Web/sites -g az-func-example-rg -n durable-sample-func/config/web --set properties.functionAppScaleLimit=1
+```
+
 
 アプリをデプロイ
 ```
 >func azure functionapp publish durable-sample-func
+>func azure functionapp publish durable-sample-func --publish-local-settings -y
 ```
+--publish-local-settings : local.settings.jsonの内容をAzureに発行し設定を上書きします。
+
 
 アプリ設定が必要です(Azure Portalから)
 ```
@@ -60,3 +69,6 @@ Functionsを作成
     "TwilioAuthToken": "YYY...",
     "TwilioPhoneNumber": "+1123456789"    
 ```
+
+
+
