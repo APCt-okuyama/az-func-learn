@@ -12,7 +12,7 @@ https://docs.microsoft.com/ja-jp/azure/azure-functions/functions-core-tools-refe
 `func azure functionapp publish` などAzureへのデプロイなどに利用
 
 ## func durable
-durable functionsを操作・管理する
+durable functionsの操作・管理
 
 インスタンス開始 (--function-name に オーケストレーター関数の名前を指定する)
 ```

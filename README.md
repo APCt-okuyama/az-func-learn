@@ -74,5 +74,6 @@ Azure Functions Core Tools (funcコマンド)
 | E2_sample | ファインイン・ファンアウトのサンプル |
 | E3_sample_Monitor | 監視のサンプル <br> twilio を利用 <br> OpenWeather API を利用 |
 | E4_sample_sms_verification | 人による操作のサンプル<br> Twilio を利用したSMSでの本人確認|
-| Practice01_AzureStrage | タスクハブ(Azure Strage)について |
-| Practice02_WorkflowError | 実践的なサンプルとして<br>ワークフローでエラーが発生した場合のサンプル |
+| Training1_cosmosdb | 実践的なサンプルとして<br>ワークフローでエラーが発生した場合のサンプル |
+| Training2_coretools | durable functionsの操作・管理 |
+| Training3_performance | パフォーマンスとスケーリングについて |
