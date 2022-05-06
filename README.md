@@ -54,7 +54,7 @@ Azure Functions Core Tools (funcコマンド)
 >az storage account create --name durablefunc0001 --resource-group az-func-example-rg --location japaneast --sku Standard_RAGRS --kind StorageV2
 >az functionapp create --resource-group az-func-example-rg --consumption-plan-location japaneast --runtime node --runtime-version 14 --functions-version 4 --name durable-sample-func --storage-account durablefunc0001
 ```
-開発中は不用意にスケーリングされないようにScaleLimitを設定しておきます。
+※開発中は不用意にスケーリングされないようにScaleLimitを設定しておきます。
 ```
 >az resource update --resource-type Microsoft.Web/sites -g az-func-example-rg -n durable-sample-func/config/web --set properties.functionAppScaleLimit=1
 ```
