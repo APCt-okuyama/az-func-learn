@@ -1,0 +1,20 @@
+{
+  "bindings": [
+    {
+      "name": "myparam",
+      "type": "activityTrigger",
+      "direction": "in"
+    },
+    {
+      "name": "db1Document",
+      "type": "cosmosDB",
+      "databaseName": "training1db",
+      "collectionName": "my-container2",
+      "createIfNotExists": true,
+      "connectionStringSetting": "AzureCosmosDBConnection",
+      "partitionKey": "/myid",      
+      "direction": "out"
+
+    }
+  ]
+}

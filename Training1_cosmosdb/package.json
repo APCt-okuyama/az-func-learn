@@ -1,0 +1,14 @@
+{
+  "name": "",
+  "version": "",
+  "description": "",
+  "scripts": {
+    "test": "echo \"No tests yet...\""
+  },
+  "author": "",
+  "dependencies": {
+    "@azure/cosmos": "^3.15.1",
+    "durable-functions": "^1.5.4",
+    "uuid": "^8.3.2"
+  }
+}
