@@ -55,4 +55,4 @@ npm install uuid
 | O-Senario1 | ３つのActivityを直列に処理する | エラーが発生した場合は補正用のActivityを処理する |
 | O-Senario2 | ３つのActivityを並列に処理する | エラーが発生した場合は補正用のActivityを処理する |
 
-![Durable Functions](/Training1.png) 
+![Durable Functions](./Training1.png) 
