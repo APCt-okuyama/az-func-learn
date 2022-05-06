@@ -47,7 +47,12 @@ npm install uuid
 ```
 
 ## シナリオ・内容・解説
+
+特徴としてはワークフローのフレームワークのようにActivityの順序変更や並列処理、エラー処理（補正トランザクション）の実装を容易に行うことが可能。
+
 | シナリオ | 内容・解説 | 備考
 | --- | --- | --- |
-| O-Senario1 | ３つのActivityを直列に処理する | |
-| O-Senario2 | ３つのActivityを並列に処理する | |
+| O-Senario1 | ３つのActivityを直列に処理する | エラーが発生した場合は補正用のActivityを処理する |
+| O-Senario2 | ３つのActivityを並列に処理する | エラーが発生した場合は補正用のActivityを処理する |
+
+![Durable Functions](/Training1.png) 
