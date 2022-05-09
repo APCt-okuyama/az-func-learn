@@ -19,14 +19,22 @@ module.exports = df.orchestrator(function* (context) {
 
     try{
         outputs.push(yield context.df.callActivity("A-CreateDB1", {name:"tx-101", myuuid:myuuid}));
-        outputs.push(yield context.df.callActivity("A-CreateDB2", {name:"tx-102", myuuid:myuuid}));
+
+        //outputs.push(yield context.df.callActivity("A-CreateDB2", {name:"tx-102", myuuid:myuuid}));
+        //retry指定
+        // const firstRetryIntervalInMilliseconds = 5000;
+        // const maxNumberOfAttempts = 3;
+        const retryOptions = new df.RetryOptions(5000, 3);
+        
+        outputs.push(yield context.df.callActivityWithRetry("A-CreateDB2", retryOptions, {name:"tx-102", myuuid:myuuid}));
+
         outputs.push(yield context.df.callActivity("A-CreateDB3", {name:"tx-103", myuuid:myuuid}));
     }
     catch (error) {
         context.log('[ERROR]: ' + error);
         // Error handling or compensation goes here.
         yield context.df.callActivity("A-DeleteDB", {myuuid:myuuid})
-
+        throw Error('Error O-Senario1.');
     }
 
     // returns ["Hello Tokyo!", "Hello Seattle!", "Hello London!"]

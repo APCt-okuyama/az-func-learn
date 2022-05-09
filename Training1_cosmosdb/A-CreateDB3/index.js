@@ -9,7 +9,16 @@
  *   function app in Kudu
  */
 
+const appInsights = require("applicationinsights");
+appInsights.setup();
+const client = appInsights.defaultClient;
+
 module.exports = async function (context, myparam) {
+
+    var operationIdOverride = {"ai.operation.id":myparam.myuuid};
+    context.log("operationIdOverride:" + JSON.stringify(operationIdOverride));
+    client.trackTrace({message: "my trace message3", tagOverrides:operationIdOverride});
+    client.trackEvent({name: "my custom event3", tagOverrides:operationIdOverride, properties: {customProperty2: "custom property value"}});
 
     context.log('start CreateDB3... myparam:' + JSON.stringify(myparam));
 

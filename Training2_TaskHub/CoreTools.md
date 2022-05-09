@@ -35,7 +35,7 @@ func durable terminate --id 42eec4b571f943d6a7341e58dce68153 --reason "Found a b
 
 taskhubすべて削除
 ```
-func durable delete-task-hub --task-hub-name E4TaskHub
+func durable delete-task-hub --task-hub-name training1taskhub
 ```
 
 

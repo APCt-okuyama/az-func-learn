@@ -16,7 +16,12 @@ Cosmos DBのアカウントを準備する。　※従量課金のサーバレ�
 ```
 # Create a Cosmos account for SQL API
 az cosmosdb create --name "my-training1-account" --resource-group az-func-example-rg --default-consistency-level Eventual --locations regionName="japaneast" failoverPriority=0 isZoneRedundant=False --capabilities EnableServerless
+```
 
+以下のコマンドでデータベースとコンテナーを作成する  
+※activity(`functions.json`)で `"createIfNotExists": true` を指定している場合は自動で作成されるため、作成する手動で必要なし。
+
+```
 # Create a SQL API database
 az cosmosdb sql database create --account-name "my-training1-account" --resource-group az-func-example-rg --name training1db
 
@@ -44,6 +49,12 @@ func new -t "Durable Functions orchestrator" -n O-Senario2
 npm install durable-functions
 npm install @azure/cosmos --save
 npm install uuid
+npm install --save applicationinsights
+```
+
+アプリをデプロイ
+```
+>func azure functionapp publish durable-sample-func --publish-local-settings -y
 ```
 
 ## シナリオ・内容・解説

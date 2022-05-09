@@ -47,14 +47,14 @@ Node.js 10.x または 12.x ※v14で試しています。
 Azure Functions Core Tools (funcコマンド)
 ```
 ### Azureリソースの準備 
-リソースグループとストレージアカウントを作成しておく
+リソースグループとストレージアカウント、Functionsを作成しておく
 ```
 >az login
 >az group create --name az-func-example-rg --location japaneast
 >az storage account create --name durablefunc0001 --resource-group az-func-example-rg --location japaneast --sku Standard_LRS --kind StorageV2
 >az functionapp create --resource-group az-func-example-rg --consumption-plan-location japaneast --runtime node --runtime-version 14 --functions-version 4 --name durable-sample-func --storage-account durablefunc0001
 ```
-※開発中は不用意にスケーリングされないようにScaleLimitを設定しておきます。
+※従量課金プランで作成しているので開発中は不用意にスケーリングされないようにScaleLimitを設定しておきます。
 ```
 >az resource update --resource-type Microsoft.Web/sites -g az-func-example-rg -n durable-sample-func/config/web --set properties.functionAppScaleLimit=1
 ```
@@ -75,5 +75,5 @@ Durable Functions 作成時にストレージアカウントに自動的にdurab
 | E3_sample_Monitor | 監視のサンプル <br> twilio を利用 <br> OpenWeather API を利用 |
 | E4_sample_sms_verification | 人による操作のサンプル<br> Twilio を利用したSMSでの本人確認|
 | Training1_cosmosdb | 実践的なサンプルとして<br>ワークフローでエラーが発生した場合のサンプル<br>簡単な補正トランザクションの例 |
-| Training2_coretools | durable functionsの操作・管理 |
+| Training2_TaskHub | TaskHub(タスク管理)について<br>durable functionsの操作・管理 |
 | Training3_performance | パフォーマンスとスケーリングについて |
