@@ -76,4 +76,6 @@ Durable Functions 作成時にストレージアカウントに自動的にdurab
 | E4_sample_sms_verification | 人による操作のサンプル<br> Twilio を利用したSMSでの本人確認|
 | Training1_cosmosdb | 実践的なサンプルとして<br>ワークフローでエラーが発生した場合のサンプル<br>簡単な補正トランザクションの例 |
 | Training2_TaskHub | TaskHub(タスク管理)について<br>durable functionsの操作・管理 |
-| Training3_performance | パフォーマンスとスケーリングについて |
+| Training3_version | バージョン管理について |
+| Training4_performance | パフォーマンスとスケーリングについて |
+
