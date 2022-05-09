@@ -11,5 +11,13 @@
   "extensionBundle": {
     "id": "Microsoft.Azure.Functions.ExtensionBundle",
     "version": "[2.*, 3.0.0)"
+  },
+  "extensions": {
+    "durableTask": {
+      "hubName": "Training1TaskHub",
+      "storageProvider": {
+        "partitionCount": 4
+      }
+    }
   }
 }
