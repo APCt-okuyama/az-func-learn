@@ -14,7 +14,7 @@
   },
   "extensions": {
     "durableTask": {
-      "hubName": "Training1TaskHub",
+      "hubName": "%MyTaskHubName%",
       "storageProvider": {
         "partitionCount": 4
       }
