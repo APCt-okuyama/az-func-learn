@@ -1,6 +1,6 @@
 # Training 1 (/w Cosmos DB)
 
-Cosmos DBを利用して、Durable Functionsでワークフロー、並列処理を実装する。
+Cosmos DBを利用して、Durable Functionsでワークフロー、直列/並列処理を実装する。
 
 確認事項
 エラー時(リトライ処理)
