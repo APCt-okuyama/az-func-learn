@@ -38,8 +38,8 @@ module.exports = async function (context, myparam) {
     context.bindings.db1Document = JSON.stringify(data);
 
     //sleep
-    context.log('A-CreateDB1 sleep...');
-    await new Promise(resolve => setTimeout(resolve, 500));
+    //context.log('A-CreateDB1 sleep...');
+    //await new Promise(resolve => setTimeout(resolve, 500));
     //throw Error('create db 1 err');
 
     return true;

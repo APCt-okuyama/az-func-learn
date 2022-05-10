@@ -64,8 +64,14 @@ local.settings.jsonを上書き
 
 slot指定
 ```
->func azure functionapp publish durable-sample-func --slot 
+>func azure functionapp publish durable-sample-func --slot slot
 ```
+
+log確認
+```
+>func azure functionapp logstream durable-sample-func
+```
+
 
 ## シナリオ・内容・解説
 
