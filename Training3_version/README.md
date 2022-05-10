@@ -8,6 +8,7 @@
 （非推奨しない）
 
 ### 2. 処理中のすべてのインスタンスを停止する
+
 開発中などはこれで良い。
 
 funcコマンドで削除して、アプリを再起動する
@@ -24,7 +25,15 @@ func durable delete-task-hub --task-hub-name training1taskhub
 ### 4. デプロイスロット
 キュートリガーやEventHubなどでトリガーされている場合は、アプリ設定を分ける必要があります。
 
-## まとめ
+## まとめ（注意点）
 途中のワークフローの変更には対応できない。  
-タスクハブを分けて対応する方法  
-デプロイスロットの活用  
+並行してデプロイすることを検討する。
+
+Functionsの場合はデプロイスロットを利用してタスクハブを分けて対応する方法が有効。
+
+![DeploySlot](./Training3_version.png)
+
+(補足)TaskHubは下記のコマンドでクリアできます。
+```
+>func durable delete-task-hub --task-hub-name training1taskhub
+```

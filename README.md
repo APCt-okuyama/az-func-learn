@@ -33,7 +33,7 @@ Durable Functions Entity HTTP starter
 | #3 | 非同期 HTTP API | 実行時間の長い処理の調整 <br>※オーケストレーター関数の状態をクエリするWebhook HTTP APIが組み込みサポートされている |
 | #4 | モニター | 柔軟な監視処理 |
 | #5 | 人による操作 | タイマーを利用したワークフロー |
-| #6 | アグリゲーター | データの集計<br>(※entityを利用) |
+| #6 | アグリゲーター | データの集計<br>(※entityの利用) |
 
 [詳細な説明はこちらを参照](https://docs.microsoft.com/ja-jp/azure/azure-functions/durable/durable-functions-overview)
 
@@ -47,7 +47,7 @@ Node.js 10.x または 12.x ※v14で試しています。
 Azure Functions Core Tools (funcコマンド)
 ```
 ### Azureリソースの準備 
-リソースグループとストレージアカウント、Functionsを作成しておく
+リソースグループとストレージアカウント、Functionsを作成
 ```
 >az login
 >az group create --name az-func-example-rg --location japaneast

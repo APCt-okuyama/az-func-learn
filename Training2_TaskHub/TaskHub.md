@@ -1,7 +1,7 @@
 # タスクの管理 (Task Hub)
 
-Durable Functions ではデフォルトでAzure StrageをTaskHubとして利用します。  
-TaskHubではQueueとTableを利用して、Durable Functions(オーケストレーター関数、アクティビティ関数)の実行を管理します。
+Durable Functions はデフォルトでAzure StrageをTaskHubとして利用します。  
+TaskHubでは２種類Queueと２種類のTableを利用して、Durable Functions(オーケストレーター関数、アクティビティ関数)の実行を管理します。
 
 ## 処理の流れ
 

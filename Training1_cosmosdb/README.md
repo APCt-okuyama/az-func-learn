@@ -19,7 +19,7 @@ az cosmosdb create --name "my-training1-account" --resource-group az-func-exampl
 ```
 
 以下のコマンドでデータベースとコンテナーを作成する  
-※activity(`functions.json`)で `"createIfNotExists": true` を指定している場合は自動で作成されるため、作成する手動で必要なし。
+※activity(`functions.json`)で `"createIfNotExists": true` を指定している場合は自動で作成されるため、手動で作成する必要なし。
 
 ```
 # Create a SQL API database
@@ -52,9 +52,19 @@ npm install uuid
 npm install --save applicationinsights
 ```
 
-アプリをデプロイ
+アプリをデプロイの例 (zipデプロイ)
+```
+>func azure functionapp publish durable-sample-func 
+```
+
+local.settings.jsonを上書き
 ```
 >func azure functionapp publish durable-sample-func --publish-local-settings -y
+```
+
+slot指定
+```
+>func azure functionapp publish durable-sample-func --slot 
 ```
 
 ## シナリオ・内容・解説
