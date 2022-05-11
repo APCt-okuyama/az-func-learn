@@ -8,10 +8,9 @@ Durable Functions の既定の構成では、Azure Storage(Queue, Table)が利�
 
 ![AzureStorage](./AzureStorage.png)
 
-Durable Functions には、従来の v1 汎用ストレージ アカウントを使用することを強くお勧め
-新しい v2 ストレージ アカウントでは、Durable Functions ワークロードのコストが大幅に高まるおそれがあります。
+Durable Functions には、従来の v1 汎用ストレージ アカウントを使用することが推奨されている。新しい v2 ストレージ アカウントでは、Durable Functions ワークロードのコストが大幅に高くなるおそれがある。
 
-host.jsonの例
+host.jsonでStorageを指定する
 ```
 {
   "extensions": {
