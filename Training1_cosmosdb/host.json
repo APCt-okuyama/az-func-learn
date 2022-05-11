@@ -16,7 +16,7 @@
     "durableTask": {
       "hubName": "%MyTaskHubName%",
       "storageProvider": {
-        "partitionCount": 4
+        "connectionStringName":"AzureWebJobsStorageTaskHub"
       }
     }
   }

@@ -1,7 +1,8 @@
 # az-func-learn (durable functions)
 
 ## 概要
-サーバレス環境でステートフル関数を記述できる拡張機能
+サーバレス環境でステートフル関数を記述できる拡張機能  
+スケーラビリティやエラーハンドリングなどを考慮すると複雑になりがちなワークフローの実装をサポートする拡張機能
 
 https://docs.microsoft.com/ja-jp/azure/azure-functions/durable/quickstart-js-vscode
 
@@ -52,6 +53,8 @@ Azure Functions Core Tools (funcコマンド)
 >az login
 >az group create --name az-func-example-rg --location japaneast
 >az storage account create --name durablefunc0001 --resource-group az-func-example-rg --location japaneast --sku Standard_LRS --kind StorageV2
+# taskhub用のstorage (汎用v1[--kind Storage]で作成)
+>az storage account create --name durablefunc0001taskhub --resource-group az-func-example-rg --location japaneast --sku Standard_LRS --kind Storage
 >az functionapp create --resource-group az-func-example-rg --consumption-plan-location japaneast --runtime node --runtime-version 14 --functions-version 4 --name durable-sample-func --storage-account durablefunc0001
 ```
 ※従量課金プランで作成しているので開発中は不用意にスケーリングされないようにScaleLimitを設定しておきます。
@@ -62,7 +65,7 @@ Durable Functions 作成時にストレージアカウントに自動的にdurab
 
 (注意) 不要になったら削除する
 ```
->az group delete --name az-func-example-rg
+>az group delete --name az-func-example-rg -y
 ```
 
 ## サンプルソースコード
