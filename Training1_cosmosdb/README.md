@@ -1,6 +1,6 @@
 # Training 1 (/w Cosmos DB)
 
-Cosmos DBを利用して、Durable Functionsでワークフロー、直列/並列処理を実装する。
+Cosmos DBを利用して、Durable Functionsでワークフロー、直列/並列処理を実装する。  
 
 確認事項
 エラー時(リトライ処理)
@@ -42,6 +42,7 @@ func new -t "Durable Functions activity" -n A-CreateDB2
 func new -t "Durable Functions activity" -n A-CreateDB3
 func new -t "Durable Functions orchestrator" -n O-Senario1
 func new -t "Durable Functions orchestrator" -n O-Senario2
+func new -t "Durable Functions orchestrator" -n O-SenarioMain1
 ```
 
 必要なライブラリのインストール
@@ -81,5 +82,6 @@ log確認
 | --- | --- | --- |
 | O-Senario1 | ３つのActivityを直列に処理する | エラーが発生した場合は補正用のActivityを処理する |
 | O-Senario2 | ３つのActivityを並列に処理する | エラーが発生した場合は補正用のActivityを処理する |
+| O-SenarioMain1 | O-Senario1とO-Senario2をサブオーケストレーターとして実行する |  |
 
 ![Durable Functions](./Training1.png) 
