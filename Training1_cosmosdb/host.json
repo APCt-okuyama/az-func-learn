@@ -17,6 +17,19 @@
       "hubName": "%MyTaskHubName%",
       "storageProvider": {
         "connectionStringName":"AzureWebJobsStorageTaskHub"
+      },
+      "notifications": {
+        "eventGrid": {
+          "topicEndpoint": "https://my-training1-topic.japaneast-1.eventgrid.azure.net/api/events",
+          "keySettingName": "MyEventGridKey"
+        }
+      }
+    },
+    "cosmosDB": {
+      "connectionMode": "Gateway",
+      "protocol": "Https",
+      "leaseOptions": {
+        "leasePrefix": "prefix1"
       }
     }
   }

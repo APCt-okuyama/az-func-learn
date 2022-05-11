@@ -1,0 +1,18 @@
+{
+  "bindings": [
+    {
+      "type": "eventGridTrigger",
+      "name": "eventGridEvent",
+      "direction": "in"
+    },
+    {
+      "name": "durablelog",
+      "type": "cosmosDB",
+      "databaseName": "training1db",
+      "collectionName": "durable-eventlog-container",
+      "createIfNotExists": true,
+      "connectionStringSetting": "AzureCosmosDBConnection",
+      "direction": "out"
+    }
+  ]
+}
