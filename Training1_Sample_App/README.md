@@ -1,15 +1,9 @@
 # Training 1 (/w Cosmos DB)
 
-Cosmos DBを利用して、Durable Functionsでワークフロー、直列/並列処理を実装する。  
+Durable Functionsでワークフロー、直列/並列処理、エラー処理を確認する
 
-確認事項
-エラー時(リトライ処理)
-ワークフローを変更した場合
-状態の管理
-
-## シナリオ
-複数のCosmosDBをへの変更処理をDurable Functionsで制御する。
-
+## 基本的なシナリオ
+複数のCosmosDBへの変更処理をDurable Functionsで制御する。
 
 ## 準備(cosmos db)
 Cosmos DBのアカウントを準備する。　※従量課金のサーバレスモードで作成(--capabilities EnableServerless)
@@ -33,16 +27,16 @@ az cosmosdb sql container create --account-name "my-training1-account" --resourc
 
 ## Azure Functions準備
 
-プロジェクト、関数の作成
+`func` コマンドを利用してプロジェクト、関数を作成する。 
 ```
 func init --worker-runtime node --language javascript
 func new -t "Durable Functions HTTP starter" -n HttpStart
 func new -t "Durable Functions activity" -n A-CreateDB1
 func new -t "Durable Functions activity" -n A-CreateDB2
 func new -t "Durable Functions activity" -n A-CreateDB3
-func new -t "Durable Functions orchestrator" -n O-Senario1
-func new -t "Durable Functions orchestrator" -n O-Senario2
-func new -t "Durable Functions orchestrator" -n O-SenarioMain1
+func new -t "Durable Functions orchestrator" -n O-Scenario1
+func new -t "Durable Functions orchestrator" -n O-Scenario2
+func new -t "Durable Functions orchestrator" -n O-ScenarioMain1
 ```
 
 必要なライブラリのインストール
@@ -55,22 +49,22 @@ npm install --save applicationinsights
 
 アプリをデプロイの例 (zipデプロイ)
 ```
->func azure functionapp publish durable-sample-func 
+func azure functionapp publish durable-sample-func 
 ```
 
 local.settings.jsonを上書き
 ```
->func azure functionapp publish durable-sample-func --publish-local-settings -y
+func azure functionapp publish durable-sample-func --publish-local-settings -y
 ```
 
 slot指定
 ```
->func azure functionapp publish durable-sample-func --slot slot
+func azure functionapp publish durable-sample-func --slot slot
 ```
 
 log確認
 ```
->func azure functionapp logstream durable-sample-func
+func azure functionapp logstream durable-sample-func
 ```
 
 
@@ -80,8 +74,8 @@ log確認
 
 | シナリオ | 内容・解説 | 備考
 | --- | --- | --- |
-| O-Senario1 | ３つのActivityを直列に処理する | エラーが発生した場合は補正用のActivityを処理する |
-| O-Senario2 | ３つのActivityを並列に処理する | エラーが発生した場合は補正用のActivityを処理する |
-| O-SenarioMain1 | O-Senario1とO-Senario2をサブオーケストレーターとして実行する |  |
+| O-Scenario1 | ３つのActivityを直列に処理する | エラーが発生した場合は補正用のActivityを処理する |
+| O-Scenario2 | ３つのActivityを並列に処理する | エラーが発生した場合は補正用のActivityを処理する |
+| O-ScenarioMain1 | O-Scenario1とO-Scenario2をサブオーケストレーターとして実行する |  |
 
 ![Durable Functions](./Training1.png) 

@@ -1,0 +1,1 @@
+# Typescript で Functions を作成
