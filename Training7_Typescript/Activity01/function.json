@@ -1,0 +1,10 @@
+{
+  "bindings": [
+    {
+      "name": "name",
+      "type": "activityTrigger",
+      "direction": "in"
+    }
+  ],
+  "scriptFile": "../dist/Activity01/index.js"
+}
