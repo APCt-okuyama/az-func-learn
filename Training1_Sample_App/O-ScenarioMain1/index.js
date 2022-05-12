@@ -16,7 +16,7 @@ module.exports = df.orchestrator(function* (context) {
 
     // Run multiple O-Scenario1 as sub orchestrator  in parallel
     const Scenario1Tasks = [];
-    for (let i = 0; i < 3; i++ ) {
+    for (let i = 0; i < 100; i++ ) {
         const scenarioTask = context.df.callSubOrchestrator("O-Scenario1");
         Scenario1Tasks.push(scenarioTask);
     }

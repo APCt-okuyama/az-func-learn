@@ -13,8 +13,6 @@ curl "https://durablefunc0001taskhub.table.core.windows.net/Training1TaskHubInst
 ## Storage Explorer を利用する
 https://azure.microsoft.com/ja-jp/features/storage-explorer/
 
-Azure Storageの Viewer ツール 開発時はこちらを利用する  
-※Azure Storage の SAS(Shared Access Signature)を有効にする必要があります。
-
-集計などを行いたい場合は他のDBに移した方が良い。
-
+Azure Storageの Viewer ツール 開発時はこちらを利用する。  
+※Azure Storage の SAS(Shared Access Signature)を有効にする必要があります。  
+※集計などを行いたい場合は他のDBに移して行う。  
