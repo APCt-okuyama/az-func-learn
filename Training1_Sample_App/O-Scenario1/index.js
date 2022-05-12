@@ -34,7 +34,7 @@ module.exports = df.orchestrator(function* (context) {
         context.log('[ERROR]: ' + error);
         // Error handling or compensation goes here.
         yield context.df.callActivity("A-DeleteDB", {myuuid:myuuid})
-        throw Error('Error O-Senario1.');
+        throw Error('Error O-Scenario1.');
     }
 
     // returns ["Hello Tokyo!", "Hello Seattle!", "Hello London!"]

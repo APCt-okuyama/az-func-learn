@@ -20,7 +20,7 @@
       },
       "notifications": {
         "eventGrid": {
-          "topicEndpoint": "https://my-training1-topic.japaneast-1.eventgrid.azure.net/api/events",
+          "topicEndpoint": "%MyEventGridEndpoint%",
           "keySettingName": "MyEventGridKey"
         }
       }

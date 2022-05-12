@@ -51,10 +51,16 @@ Azure Functions Core Tools (funcコマンド)
 リソースグループとストレージアカウント、Functionsを作成
 ```
 >az login
+
 >az group create --name az-func-example-rg --location japaneast
+
+# Azure Functions用のstorage account
 >az storage account create --name durablefunc0001 --resource-group az-func-example-rg --location japaneast --sku Standard_LRS --kind StorageV2
-# taskhub用のstorage (汎用v1[--kind Storage]で作成)
+
+# durable functions taskhub用のstorage account (汎用v1[--kind Storage]で作成)
 >az storage account create --name durablefunc0001taskhub --resource-group az-func-example-rg --location japaneast --sku Standard_LRS --kind Storage
+
+# functions
 >az functionapp create --resource-group az-func-example-rg --consumption-plan-location japaneast --runtime node --runtime-version 14 --functions-version 4 --name durable-sample-func --storage-account durablefunc0001
 ```
 ※従量課金プランで作成しているので開発中は不用意にスケーリングされないようにScaleLimitを設定しておきます。
@@ -68,7 +74,7 @@ Durable Functions 作成時にストレージアカウントに自動的にdurab
 >az group delete --name az-func-example-rg -y
 ```
 
-## サンプルソースコード
+## サンプルと解説
 | フォルダ名 | 内容 |
 | --- | ---|
 | 1st-df-project | vs codeを使って初めの関数を作成 |

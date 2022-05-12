@@ -14,21 +14,21 @@ const df = require("durable-functions");
 module.exports = df.orchestrator(function* (context) {
     const outputs = [];
 
-    // Run multiple O-Senario1 as sub orchestrator  in parallel
-    const Senario1Tasks = [];
+    // Run multiple O-Scenario1 as sub orchestrator  in parallel
+    const Scenario1Tasks = [];
     for (let i = 0; i < 3; i++ ) {
-        const senarioTask = context.df.callSubOrchestrator("O-Senario1");
-        Senario1Tasks.push(senarioTask);
+        const scenarioTask = context.df.callSubOrchestrator("O-Scenario1");
+        Scenario1Tasks.push(scenarioTask);
     }
-    yield context.df.Task.all(Senario1Tasks);
+    yield context.df.Task.all(Scenario1Tasks);
 
-    const Senario2Tasks = [];
+    const Scenario2Tasks = [];
     for (let i = 0; i < 3; i++ ) {
-        const senarioTask = context.df.callSubOrchestrator("O-Senario2");
-        Senario2Tasks.push(senarioTask);
+        const scenarioTask = context.df.callSubOrchestrator("O-Scenario2");
+        Scenario2Tasks.push(scenarioTask);
     }
 
-    yield context.df.Task.all(Senario2Tasks);
+    yield context.df.Task.all(Scenario2Tasks);
 
     return "okay";
 });
