@@ -87,4 +87,8 @@ Durable Functions 作成時にストレージアカウントに自動的にdurab
 | Training2_TaskHub | TaskHub(タスク管理)について<br>durable functionsの操作・管理 |
 | Training3_version | バージョン管理について |
 | Training4_performance | パフォーマンスとスケーリングについて |
-
+| Training5_ErrorHandling | オーケストレーターでのエラーの取り扱い |
+| Training6_EventGrid | EventGridを利用してTaskの状態を管理する |
+| Training7_Typescript | TypescriptでDurable Functionsの動作確認 |
+| Training8_custom_container | Dockerコンテナーとしてデプロイする |
+| Training9_keda_k8s | KEDAを使用したAzure Functions |
