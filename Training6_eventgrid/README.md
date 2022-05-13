@@ -38,4 +38,4 @@ az eventgrid topic key list --name my-training1-topic -g az-func-example-rg --qu
 ```
 
 Event Grid側のSubscription設定でFunctionsの関数を指定する  
-![EventGrid-Funcstion](./EventGridConfig.png)
+![EventGrid-Notification](./EventGridConfig.png)
