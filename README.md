@@ -50,28 +50,31 @@ Azure Functions Core Tools (funcコマンド)
 ### Azureリソースの準備 
 リソースグループとストレージアカウント、Functionsを作成
 ```
->az login
+az login
+az account show
 
->az group create --name az-func-example-rg --location japaneast
+az group create --name az-func-example-rg --location japaneast
 
 # Azure Functions用のstorage account
->az storage account create --name durablefunc0001 --resource-group az-func-example-rg --location japaneast --sku Standard_LRS --kind StorageV2
+az storage account create --name durablefunc0001 --resource-group az-func-example-rg --location japaneast --sku Standard_LRS --kind StorageV2
+az storage account show-connection-string -g az-func-example-rg -n durablefunc0001
 
 # durable functions taskhub用のstorage account (汎用v1[--kind Storage]で作成)
->az storage account create --name durablefunc0001taskhub --resource-group az-func-example-rg --location japaneast --sku Standard_LRS --kind Storage
+az storage account create --name durablefunc0001taskhub --resource-group az-func-example-rg --location japaneast --sku Standard_LRS --kind Storage
+az storage account show-connection-string -g az-func-example-rg -n durablefunc0001taskhub
 
 # functions
->az functionapp create --resource-group az-func-example-rg --consumption-plan-location japaneast --runtime node --runtime-version 14 --functions-version 4 --name durable-sample-func --storage-account durablefunc0001
+az functionapp create --resource-group az-func-example-rg --consumption-plan-location japaneast --runtime node --runtime-version 14 --functions-version 4 --name durable-sample-func --storage-account durablefunc0001
 ```
 ※従量課金プランで作成しているので開発中は不用意にスケーリングされないようにScaleLimitを設定しておきます。
 ```
->az resource update --resource-type Microsoft.Web/sites -g az-func-example-rg -n durable-sample-func/config/web --set properties.functionAppScaleLimit=1
+az resource update --resource-type Microsoft.Web/sites -g az-func-example-rg -n durable-sample-func/config/web --set properties.functionAppScaleLimit=2
 ```
 Durable Functions 作成時にストレージアカウントに自動的にdurabel functions 管理用のキュー、テーブルが作成されます。
 
 (注意) 不要になったら削除する
 ```
->az group delete --name az-func-example-rg -y
+az group delete --name az-func-example-rg -y
 ```
 
 ## サンプルと解説
