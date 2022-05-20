@@ -10,6 +10,7 @@ Cosmos DBのアカウントを準備する。　※従量課金のサーバレ�
 ```
 # Create a Cosmos account for SQL API
 az cosmosdb create --name "my-training1-account" --resource-group az-func-example-rg --default-consistency-level Eventual --locations regionName="japaneast" failoverPriority=0 isZoneRedundant=False --capabilities EnableServerless
+az cosmosdb list-connection-strings --name my-training1-account --resource-group az-func-example-rg
 ```
 
 以下のコマンドでデータベースとコンテナーを作成する  
@@ -51,6 +52,7 @@ npm install --save applicationinsights
 ```
 func azure functionapp publish durable-sample-func 
 ```
+
 
 local.settings.jsonを上書き
 ```

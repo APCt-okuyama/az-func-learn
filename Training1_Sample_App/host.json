@@ -21,7 +21,13 @@
       "notifications": {
         "eventGrid": {
           "topicEndpoint": "%MyEventGridEndpoint%",
-          "keySettingName": "MyEventGridKey"
+          "keySettingName": "MyEventGridKey",
+          "publishEventTypes": [
+            "Started",
+            "Failed",
+            "Terminated",
+            "Completed"
+          ]
         }
       }
     },
