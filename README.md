@@ -63,7 +63,7 @@ az storage account show-connection-string -g az-func-example-rg -n durablefunc00
 az storage account create --name durablefunc0001taskhub --resource-group az-func-example-rg --location japaneast --sku Standard_LRS --kind Storage
 az storage account show-connection-string -g az-func-example-rg -n durablefunc0001taskhub
 
-# functions
+# functions (--functions-version 4 ランタイムバージョン)
 az functionapp create --resource-group az-func-example-rg --consumption-plan-location japaneast --runtime node --runtime-version 14 --functions-version 4 --name durable-sample-func --storage-account durablefunc0001
 ```
 ※従量課金プランで作成しているので開発中は不用意にスケーリングされないようにScaleLimitを設定しておきます。
