@@ -2,9 +2,10 @@
 
 ## Visual Studio Code でのローカルデバッグについて
 
-https://docs.microsoft.com/ja-jp/azure/azure-functions/functions-develop-vs-code?tabs=csharp
+https://docs.microsoft.com/ja-jp/azure/azure-functions/functions-develop-vs-code
 
-`Visual Studio Code`でソースコードにブレークポイントを設定して、F5を押してアプリを実行する。
+Visual Studio Codeに`Azure Functions 拡張機能`をインストールする。
+ソースコードにブレークポイントを設定して、F5を押してアプリを実行する。
 
 ### 関連する設定
 
