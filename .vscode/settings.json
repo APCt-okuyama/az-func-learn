@@ -1,5 +1,5 @@
 {
-    "azureFunctions.deploySubpath": "1st-df-project",
+    "azureFunctions.deploySubpath": "Training1_Sample_App",
     "azureFunctions.postDeployTask": "npm install (functions)",
     "azureFunctions.projectLanguage": "JavaScript",
     "azureFunctions.projectRuntime": "~4",
