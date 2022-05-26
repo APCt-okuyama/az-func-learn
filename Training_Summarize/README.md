@@ -2,7 +2,7 @@
 
 ![Durable Functions](./durablefunctions.PNG) 
 
-Azure FunctionsのDurable Functionsを利用する機会がありましたので、簡単に概要を纏めて置きたいと思います。非常によい拡張機能でFunctionsを使ってシステムを構築する際には是非利用したい機能になっています。
+こんにちは、ACS事業部の奥山です。Azure FunctionsのDurable Functionsを利用する機会があり、非常によい拡張機能でFunctionsを使ってシステムを構築する際には是非利用したい機能だと思ったのでブログにしておきます。
 
 ## Durable Functionsとは
 Functionsで利用できるDurable Functionsとはサーバレス環境でステートフル関数を記述できる拡張機能になります。簡単に言うと「直列・並行処理、ワークフロー制御、補正トランザクション、タイマー処理など複雑になりがちなコーディングがより簡単・安全に実現できる拡張機能」と言えます。Functionsを利用することで、スケーラブルで安全なシステムが簡単に素早く実現できるようになっています。
@@ -14,12 +14,16 @@ Durable Functionsについては現在、C#、Javascript(/Typescript)、Python�
 ※今回はJavascriptで動作確認を行いました。Javascriptでのクイックスタートは[こちら](https://docs.microsoft.com/ja-jp/azure/azure-functions/durable/quickstart-js-vscode)
 
 
-# 仕組みについて
+# 基本的な仕組みについて
 Durable Functionsでは状態の管理にTaskHub(デフォルトではAzure StorageのQueueu, Table)を利用しています。
 オーケストレーター関数、アクティビティ関数、クライアント関数、エンティティ関数はそれぞれQueue, Tableを参照し連携しています。
 
 構成を簡単に図にするとこうなります。
 ![Durable Functions](./DurableFunctions_TaskHub.png) 
+
+1. クライアント関数はオーケストレーター関数を起動するために、Queueuへメッセージを登録します。
+2. オーケストレーター関数はQueueuトリガーにより起動され、アクティビティ関数を起動するために、Queueu,Tableへメッセージを登録します。
+3. アクティビティ関数はQueueトリガーによって起動され、結果をQueueu,Tableへメッセージを登録します。Queueuトリガーを通してオーケストレーター関数が再度起動されます。
 
 # Durable Functionsの関数について
 ４つの関数から構成されます。特徴と内容を纏めると以下のようになります。
@@ -50,7 +54,9 @@ Durable Functionsでは状態の管理にTaskHub(デフォルトではAzure Stor
 Durable Functionsはクラウド設計パターンで紹介されている「イベントソーシング パターン」「CQRSパターン」などが採用されておりパフォーマンス、スケーラビリティへの対応もされています。
 Azure Functionsを利用して開発をする場合は、ぜひ利用していきたい機能です。
 
-※検証につかったソースコードは[こちら](https://github.com/APCt-okuyama/az-func-learn)
+検証につかったソースコード
+https://github.com/APCt-okuyama/az-func-learn
+
 
 # 最後に
 私たちは、Azure・AKSを活用したシステムのSIや内製化のお手伝いをさせていただいております。 Azureやコンテナ技術の知見を持つエンジニアが対応いたします。ご相談等ありましたらぜひご連絡ください。

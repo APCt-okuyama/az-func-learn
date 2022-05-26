@@ -68,7 +68,7 @@ az functionapp create --resource-group az-func-example-rg --consumption-plan-loc
 ```
 ※従量課金プランで作成しているので開発中は不用意にスケーリングされないようにScaleLimitを設定しておきます。
 ```
-az resource update --resource-type Microsoft.Web/sites -g az-func-example-rg -n durable-sample-func/config/web --set properties.functionAppScaleLimit=2
+az resource update --resource-type Microsoft.Web/sites -g az-func-example-rg -n durable-sample-func/config/web --set properties.functionAppScaleLimit=1
 ```
 Durable Functions 作成時にストレージアカウントに自動的にdurabel functions 管理用のキュー、テーブルが作成されます。
 
