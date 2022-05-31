@@ -1,6 +1,8 @@
-# はじめに
+Azure Durable Functionsを使ってみた
 
 ![Durable Functions](./blog_header_template.png) 
+
+# はじめに
 
 こんにちは、ACS事業部の奥山です。Azure FunctionsのDurable Functionsを利用する機会があり、非常によい拡張機能でFunctionsを使ってシステムを構築する際には是非利用したい機能だと思ったのでブログにしておきます。
 
