@@ -1,17 +1,19 @@
 # はじめに
 
-![Durable Functions](./durablefunctions.PNG) 
+![Durable Functions](./blog_header_template.png) 
 
 こんにちは、ACS事業部の奥山です。Azure FunctionsのDurable Functionsを利用する機会があり、非常によい拡張機能でFunctionsを使ってシステムを構築する際には是非利用したい機能だと思ったのでブログにしておきます。
 
 ## Durable Functionsとは
+![Durable Functions](./durablefunctions.PNG) 
 Functionsで利用できるDurable Functionsとはサーバレス環境でステートフル関数を記述できる拡張機能になります。簡単に言うと「直列・並行処理、ワークフロー制御、補正トランザクション、タイマー処理など複雑になりがちなコーディングがより簡単・安全に実現できる拡張機能」と言えます。Functionsを利用することで、スケーラブルで安全なシステムが簡単に素早く実現できるようになっています。
 
 # 導入について
 公式のドキュメントが十分に整備されているので基本的に公式のクイックスタートなどを動かしながら習得していくのが良いと思います。  
 Durable Functionsについては現在、C#、Javascript(/Typescript)、Pythonがサポートされいます。Functionsはサポートされている機能がプログラミング言語ごとに微妙に違うので注意が必要です。  
 
-※今回はJavascriptで動作確認を行いました。Javascriptでのクイックスタートは[こちら](https://docs.microsoft.com/ja-jp/azure/azure-functions/durable/quickstart-js-vscode)
+※今回はJavascriptで動作確認を行いました。
+[https://docs.microsoft.com/ja-jp/azure/azure-functions/durable/quickstart-js-vscode]
 
 
 # 基本的な仕組みについて
@@ -38,7 +40,7 @@ Durable Functionsでは状態の管理にTaskHub(デフォルトではAzure Stor
 
 公式ドキュメントで紹介されている [６つのアプリケーション パターン](https://docs.microsoft.com/ja-jp/azure/azure-functions/durable/durable-functions-overview?tabs=csharp#application-patterns "アプリケーション パターン") の実装例が非常に役に立ちます。
 
-パターンを簡単に纏めると下記のようになると思います。
+パターンを簡単に纏めると下記のようになります。
 
 | # |パターン名 | 簡単な説明・使いどころ |
 | :--: | --- | --- |
@@ -55,7 +57,7 @@ Durable Functionsはクラウド設計パターンで紹介されている「イ
 Azure Functionsを利用して開発をする場合は、ぜひ利用していきたい機能です。
 
 検証につかったソースコード
-https://github.com/APCt-okuyama/az-func-learn
+[https://github.com/APCt-okuyama/az-func-learn]
 
 
 # 最後に
