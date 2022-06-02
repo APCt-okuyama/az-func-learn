@@ -19,15 +19,15 @@ Durable Functionsについては現在、C#、Javascript(/Typescript)、Python�
 
 
 # 基本的な仕組みについて
-Durable Functionsでは状態の管理にTaskHub(デフォルトではAzure StorageのQueueu, Table)を利用しています。
+Durable Functionsでは状態の管理にTaskHub(デフォルトではAzure StorageのQueue, Table)を利用しています。
 オーケストレーター関数、アクティビティ関数、クライアント関数、エンティティ関数はそれぞれQueue, Tableを参照し連携しています。
 
 構成を簡単に図にするとこうなります。
 ![Durable Functions](./DurableFunctions_TaskHub.png) 
 
-1. クライアント関数はオーケストレーター関数を起動するために、Queueuへメッセージを登録します。
-2. オーケストレーター関数はQueueuトリガーにより起動され、アクティビティ関数を起動するために、Queueu,Tableへメッセージを登録します。
-3. アクティビティ関数はQueueトリガーによって起動され、結果をQueueu,Tableへメッセージを登録します。Queueuトリガーを通してオーケストレーター関数が再度起動されます。
+1. クライアント関数はオーケストレーター関数を起動するために、Queueへメッセージを登録します。
+2. オーケストレーター関数はQueueトリガーにより起動され、アクティビティ関数を起動するために、Queue,Tableへメッセージを登録します。
+3. アクティビティ関数はQueueトリガーによって起動され、結果をQueue,Tableへメッセージを登録します。Queueトリガーを通してオーケストレーター関数が再度起動されます。
 
 # Durable Functionsの関数について
 ４つの関数から構成されます。特徴と内容を纏めると以下のようになります。
@@ -38,7 +38,7 @@ Durable Functionsでは状態の管理にTaskHub(デフォルトではAzure Stor
 | エンティティ関数 | "持続エンティティ"とよばれ、状態が常にストレージ内に持続的に保存されます。データベースのように値を保存しておいて参照することができる。<br>Durable Functions 2.0 以降でのみ使用できます。 |
 | クライアント関数 | 関数内からオーケストレーター関数、エンティティ関数を呼び出す。<br>出力バインディングで`"type": "orchestrationClient"`が指定されている関数。  |
 
-# ６つアプリケーション パターン
+# ６つのアプリケーション パターン
 
 公式ドキュメントで紹介されている [６つのアプリケーション パターン](https://docs.microsoft.com/ja-jp/azure/azure-functions/durable/durable-functions-overview?tabs=csharp#application-patterns "アプリケーション パターン") の実装例が非常に役に立ちます。
 
