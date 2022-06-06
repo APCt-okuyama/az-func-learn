@@ -1,5 +1,7 @@
 # az-func-learn (durable functions)
 
+※2022/06にNodeJS向けにDurable Functionsの新しいバージョン(durable-functions v2.x)がリリースされています。
+
 ## 概要
 サーバレス環境でステートフル関数を記述できる拡張機能  
 スケーラビリティやエラーハンドリングなどを考慮すると複雑になりがちなワークフローの実装をサポートする拡張機能
@@ -95,3 +97,26 @@ az group delete --name az-func-example-rg -y
 | Training7_Typescript | TypescriptでDurable Functionsの動作確認 |
 | Training8_custom_container | Dockerコンテナーとしてデプロイする |
 | Training9_keda_k8s | KEDAを使用したAzure Functions |
+
+
+# New major release of Durable Functions for NodeJS
+https://techcommunity.microsoft.com/t5/apps-on-azure-blog/new-major-release-of-durable-functions-for-nodejs/ba-p/3451227
+
+package.json
+```
+{
+  "name": "",
+  "version": "",
+  "description": "",
+  "scripts": {
+    "test": "echo \"No tests yet...\""
+  },
+  "author": "",
+  "dependencies": {
+    "@azure/cosmos": "^3.15.1",
+    "applicationinsights": "^2.3.2",
+    "durable-functions": "^2.0.2", ★2022/06/06 時点
+    "uuid": "^8.3.2"
+  }
+}
+```
