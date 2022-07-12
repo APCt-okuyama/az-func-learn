@@ -15,7 +15,7 @@ MSが提供している DockerImage を利用する ※今回はjavascriptなの
 ```
 docker pull mcr.microsoft.com/azure-functions/node
 ```
-● 補足:現在MSが提供している Azure Functions 用の Docker Image は下記の6種類
+● 補足:現在MSが提供している Azure Functions 用の Docker Image は下記の6種類  
 https://hub.docker.com/_/microsoft-azure-functions
 ```
 Azure Functions for .NET
