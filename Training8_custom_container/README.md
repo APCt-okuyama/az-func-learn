@@ -11,10 +11,19 @@ NAME="Ubuntu"
 VERSION="20.04.3 LTS (Focal Fossa)"
 ```
 
-MSが提供している DockerImage を利用する ※今回はnode
+MSが提供している DockerImage を利用する ※今回はjavascriptなのでnode
 ```
 docker pull mcr.microsoft.com/azure-functions/node
 ```
+
+● 補足:現在MSが提供している Azure Functions 用の Docker Image は下記の6種類
+https://hub.docker.com/_/microsoft-azure-functions
+Azure Functions for .NET
+Azure Functions for .NET (isolated)
+Azure Functions for Java
+Azure Functions for Node
+Azure Functions for Python
+Azure Functions for PowerShell
 
 ## ローカル環境を構成する
 
